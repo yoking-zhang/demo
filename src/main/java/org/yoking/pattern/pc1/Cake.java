@@ -1,4 +1,4 @@
-package org.yoking.pattern.cp1;
+package org.yoking.pattern.pc1;
 
 import java.io.Serializable;
 
