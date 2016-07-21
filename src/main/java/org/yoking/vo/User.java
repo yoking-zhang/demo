@@ -2,6 +2,7 @@ package org.yoking.vo;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * The Class User.
@@ -127,21 +128,24 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", nickName=" + nickName + ", password="
-				+ Arrays.toString(password) + "]";
+		return "User [id=" + id + ", email=" + email + ", nickName=" + nickName + ", password=" + Arrays.toString(password) + "]";
 	}
 
+	/** 
+	 * {@inheritDoc}
+	 *
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + (int) (id ^ (id >>> 32));
-		result = prime * result + ((nickName == null) ? 0 : nickName.hashCode());
-		result = prime * result + Arrays.hashCode(password);
-		return result;
+		return Objects.hash(this.id, this.email, this.nickName, this.password);
 	}
 
+	/** 
+	 * {@inheritDoc}
+	 *
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -150,22 +154,9 @@ public class User implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (id != other.id)
-			return false;
-		if (nickName == null) {
-			if (other.nickName != null)
-				return false;
-		} else if (!nickName.equals(other.nickName))
-			return false;
-		if (!Arrays.equals(password, other.password))
-			return false;
-		return true;
+		User o = (User) obj;
+		return Objects.equals(this.id, o.id) && Objects.equals(this.email, o.email) 
+				&& Objects.equals(this.nickName, o.nickName) && Objects.equals(this.password, o.password);
 	}
 
 }

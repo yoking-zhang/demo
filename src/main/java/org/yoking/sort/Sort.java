@@ -47,12 +47,18 @@ public class Sort {
 
 		System.out.println("------ Bubble Sort ------");
 		System.out.println("Before: " + Arrays.toString(a));
+		long start = System.currentTimeMillis();
 		bubbleSort(a);
+		long end = System.currentTimeMillis();
+		System.out.println("Time cost: " + (end - start) / 1000 + "s" + (end - start) % 1000 + "ms");
 		System.out.println("After: " + Arrays.toString(a));
 
 		System.out.println("------ Quick Sort ------");
 		System.out.println("Before: " + Arrays.toString(b));
+		start = System.currentTimeMillis();
 		quickSort(b, 0, b.length - 1);
+		end = System.currentTimeMillis();
+		System.out.println("Time cost: " + (end - start) / 1000 + "s" + (end - start) % 1000 + "ms");
 		System.out.println("After: " + Arrays.toString(b));
 	}
 }
