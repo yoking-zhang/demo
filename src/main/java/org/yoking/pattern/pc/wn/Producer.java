@@ -1,4 +1,4 @@
-package org.yoking.pattern.pc1;
+package org.yoking.pattern.pc.wn;
 
 import java.util.List;
 

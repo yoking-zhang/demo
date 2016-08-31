@@ -1,19 +1,21 @@
-package org.yoking.pattern.pc;
+package org.yoking.pattern.pc.bq;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import org.yoking.pattern.pc.core.Consumer;
-import org.yoking.pattern.pc.core.Producer;
-import org.yoking.pattern.pc.core.Task;
+import org.yoking.pattern.pc.bq.core.Producer;
+import org.yoking.pattern.pc.bq.core.Task;
+import org.yoking.pattern.pc.bq.core.Consumer;
 
 /**
- * Hello world!
+ * Hello world!.
  *
  */
 public class App {
+	public static final int DEFAULT_TASK_QUEUE_SIZE = 10;
+	
 	public static void main(String[] args) {
-		BlockingQueue<Task> queue = new LinkedBlockingQueue<Task>(Constants.DEFAULT_TASK_QUEUE_SIZE);
+		BlockingQueue<Task> queue = new LinkedBlockingQueue<Task>(DEFAULT_TASK_QUEUE_SIZE);
 		
 		Runnable p1 = new Producer("P1", queue);
 		Runnable p2 = new Producer("P2", queue);

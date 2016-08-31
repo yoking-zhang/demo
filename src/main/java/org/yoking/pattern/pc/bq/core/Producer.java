@@ -1,9 +1,9 @@
-package org.yoking.pattern.pc.core;
+package org.yoking.pattern.pc.bq.core;
 
 import java.util.concurrent.BlockingQueue;
 
-import org.yoking.pattern.pc.Cake;
-import org.yoking.pattern.pc.Constants;
+import org.yoking.pattern.pc.bq.App;
+import org.yoking.pattern.pc.bq.Cake;
 
 /**
  * Producer.
@@ -22,7 +22,7 @@ public class Producer implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			if (queue != null && queue.size() < Constants.DEFAULT_TASK_QUEUE_SIZE) {
+			if (queue != null && queue.size() < App.DEFAULT_TASK_QUEUE_SIZE) {
 				try {
 					queue.put(produce());
 				} catch (InterruptedException e) {

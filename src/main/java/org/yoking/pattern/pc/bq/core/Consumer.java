@@ -1,4 +1,4 @@
-package org.yoking.pattern.pc.core;
+package org.yoking.pattern.pc.bq.core;
 
 import java.util.concurrent.BlockingQueue;
 
