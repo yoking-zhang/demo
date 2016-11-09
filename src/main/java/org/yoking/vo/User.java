@@ -3,6 +3,7 @@ package org.yoking.vo;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * The Class User.
@@ -159,4 +160,8 @@ public class User implements Serializable {
 				&& Objects.equals(this.nickName, o.nickName) && Objects.equals(this.password, o.password);
 	}
 
+	public static void main(String[] args) {
+		User u = null;
+		u = Optional.ofNullable(u).orElse(new User());
+	}
 }
