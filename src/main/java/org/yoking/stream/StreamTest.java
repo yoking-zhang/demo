@@ -40,8 +40,8 @@ public class StreamTest {
     }
 
     public static void main(String[] args) {
-        // streamFilter();
-        // reduceStringList();
+        streamFilter();
+        reduceStringList();
 
 
         System.out.println("Sum: " + Lists.newArrayList(1, 1, null, 2, 3, 4, null, 5, 6, 7, 8, 9, 10).stream().filter(num -> num != null).
