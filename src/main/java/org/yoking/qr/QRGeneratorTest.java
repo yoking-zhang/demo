@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.yoking.vo.Gender;
 import org.yoking.vo.User;
 
 import com.google.zxing.BarcodeFormat;
@@ -45,7 +46,7 @@ public class QRGeneratorTest {
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	private static void generate() throws WriterException, IOException {
-		String contents = new User(1l, "yoking.zhang@d1m.cn", "yoking", "123456".toCharArray()).toString();
+		String contents = new User(1l, "yoking.zhang@d1m.cn", "yoking", "123456".toCharArray(), Gender.MALE).toString();
 		
 		Map<EncodeHintType, String> hints = new HashMap<EncodeHintType, String>();
 		hints.put(EncodeHintType.CHARACTER_SET, Charset.forName("UTF-8").toString());

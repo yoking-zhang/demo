@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.yoking.vo.Gender;
 import org.yoking.vo.User;
 
 public class LinkedHashMapTest {
@@ -34,8 +35,8 @@ public class LinkedHashMapTest {
 	private static List<User> generateTenUserList() {
 		List<User> users = new ArrayList<User>();
 
-		for (int i = 0; i < 10; i++) {
-			users.add(new User(i, "yoking_" + i + "@d1m.cn", "yoking_" + i, new char[] { '1', '2', '3' }));
+		for (long i = 0; i < 10; i++) {
+			users.add(new User(i, "yoking_" + i + "@d1m.cn", "yoking_" + i, new char[] { '1', '2', '3' }, Gender.MALE));
 		}
 
 		return users;
